@@ -16,7 +16,7 @@
 
 HOST = "localhost"
 PORT = 4223
-UID_IMU = "6wVE7W"    # <---- Change to your UID
+UID_IMUV2 = "6wVE7W"    # <---- Change to your UID
 UID_BAROMETER = "etG" # <---- Change to your UID
 
 
@@ -29,7 +29,7 @@ import time
 import math
 
 from tinkerforge.ip_connection import IPConnection
-from tinkerforge.brick_imu import IMU
+from tinkerforge.brick_imu_v2 import IMUV2
 from tinkerforge.bricklet_barometer import Barometer
 
 class Plot(Qwt.QwtPlot):
@@ -185,7 +185,7 @@ class IMUBarometerFusion(QMainWindow):
         self.last_estimated_altitude = 0
 
         ipcon = IPConnection() 
-        self.imu = IMU(UID_IMU, ipcon) 
+        self.imu = IMUV2(UID_IMU, ipcon) 
         self.barometer = Barometer(UID_BAROMETER, ipcon)
         ipcon.connect(HOST, PORT) 
 
@@ -193,7 +193,8 @@ class IMUBarometerFusion(QMainWindow):
         # for the IMU Brick. This makes sure that the measurements are taken
         # in equidistant 2ms intervals
         self.imu.leds_off()
-        self.imu.orientation_calculation_off()
+        # No longer needed as it is not available in v2 anymore? 
+        #self.imu.orientation_calculation_off()
 
         # Turn averaging of in the Barometer Bricklet to make sure that
         # the data is without delay
