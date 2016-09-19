@@ -1,11 +1,11 @@
-Altitude Estimation with IMU Brick and Barometer Bricklet 
+Altitude Estimation with IMU Brick 2.0 and Barometer Bricklet 
 =========================================================
 
-This is an example program doing sensor fusion between the IMU Brick and
+This is an example program doing sensor fusion between the IMU Brick 2.0 and
 the Barometer Bricklet.
 We try to estimate a more reliable altitude by combining air pressure
 measurements from the Barometer Bricklet with the acceleration measurements 
-and the quaternion from the IMU Brick.
+and the quaternion from the IMU Brick 2.0.
 
 The result is drawn on a live graph with Qwt.
 
@@ -18,5 +18,5 @@ Links
 -----
 
 * Youtube video: http://youtu.be/TaqtzG7lyp0
-* IMU Brick: http://www.tinkerforge.com/en/doc/Hardware/Bricks/IMU_Brick.html
+* IMU Brick 2.0: http://www.tinkerforge.com/en/doc/Hardware/Bricks/IMU_V2_Brick.html
 * Barometer Bricklet: http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Barometer.html
