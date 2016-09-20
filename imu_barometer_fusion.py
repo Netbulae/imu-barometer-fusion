@@ -190,11 +190,13 @@ class IMUBarometerFusion(QMainWindow):
         ipcon.connect(HOST, PORT) 
 
         # Turn leds and orientation calculation off, to save calculation time
-        # for the IMU Brick. This makes sure that the measurements are taken
+        # for the IMU Brick. This makes sure that the measurements are tafquken
         # in equidistant 2ms intervals
         self.imu.leds_off()
         # No longer needed as it is not available in v2 anymore? 
         #self.imu.orientation_calculation_off()
+
+        self.imu.set_all_data_period(2)
 
         # Turn averaging of in the Barometer Bricklet to make sure that
         # the data is without delay
